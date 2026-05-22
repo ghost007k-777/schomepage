@@ -218,22 +218,24 @@
             </div>
           </div>
 
-          <div class="map-panel" aria-label="오봉정사 지도 안내">
-            <a
-              class="map-preview"
-              href="https://map.naver.com/p/search/%EC%98%A4%EB%B4%89%EC%A0%95%EC%82%AC%20%EA%B2%BD%EA%B8%B0%EB%8F%84%20%EC%9D%98%EC%99%95%EC%8B%9C%20%EA%B3%A0%EC%B2%9C%EB%8F%99%20191-6"
-              target="_blank"
-              rel="noopener"
-              aria-label="네이버 지도에서 오봉정사 위치 보기"
-            >
-              <span class="map-badge">NAVER MAP</span>
-              <span class="map-pin">오봉정사</span>
-              <span class="map-road road-one"></span>
-              <span class="map-road road-two"></span>
-              <span class="map-road road-three"></span>
-              <span class="map-place place-one">의왕시청 방면</span>
-              <span class="map-place place-two">오봉산 자락</span>
-            </a>
+          <div class="map-panel" aria-label="오봉정사 네이버 지도 미리보기">
+            <iframe
+              class="map-embed"
+              title="오봉정사 네이버 지도"
+              src="https://map.naver.com/p/search/%EC%98%A4%EB%B4%89%EC%A0%95%EC%82%AC?c=15.30,0,0,0,dh"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <p class="map-fallback">
+              지도가 보이지 않으면
+              <a
+                href="https://map.naver.com/p/search/%EC%98%A4%EB%B4%89%EC%A0%95%EC%82%AC?c=15.30,0,0,0,dh"
+                target="_blank"
+                rel="noopener"
+              >
+                네이버 지도에서 바로 보기
+              </a>
+            </p>
           </div>
         </div>
 
