@@ -734,6 +734,10 @@ h2 {
     padding: 104px 20px 220px;
   }
 
+  .hero-image {
+    object-position: 68% center;
+  }
+
   .hero h1 {
     font-size: 52px;
   }
