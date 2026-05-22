@@ -134,7 +134,7 @@ a {
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 720px;
+  max-width: 940px;
 }
 
 .eyebrow,
@@ -150,9 +150,10 @@ a {
 .hero h1 {
   margin: 0;
   font-family: "Noto Serif KR", serif;
-  font-size: clamp(48px, 8vw, 112px);
+  font-size: 92px;
   line-height: 1.02;
   letter-spacing: 0;
+  white-space: nowrap;
 }
 
 .hero-copy {
@@ -400,8 +401,8 @@ h2 {
 
 .directions-layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
-  gap: clamp(32px, 7vw, 84px);
+  grid-template-columns: minmax(320px, 0.72fr) minmax(620px, 1.28fr);
+  gap: clamp(32px, 6vw, 72px);
   align-items: center;
 }
 
@@ -441,14 +442,188 @@ h2 {
   min-width: 0;
 }
 
-.map-embed {
+.map-preview {
+  position: relative;
   display: block;
   width: 100%;
-  height: 430px;
+  min-height: 520px;
+  overflow: hidden;
   border: 1px solid rgba(44, 37, 28, 0.16);
   border-radius: 8px;
-  background: #e8efe7;
+  background:
+    linear-gradient(115deg, transparent 0 58%, rgba(233, 238, 233, 0.95) 58% 100%),
+    #f8f8f6;
   box-shadow: 0 18px 54px rgba(73, 54, 32, 0.1);
+}
+
+.map-preview::before,
+.map-preview::after {
+  position: absolute;
+  content: "";
+  background: #fff;
+}
+
+.map-preview::before {
+  left: -6%;
+  top: 5%;
+  width: 38%;
+  height: 78%;
+  border-right: 1px solid #d7d7d2;
+  transform: rotate(-28deg);
+}
+
+.map-preview::after {
+  right: -8%;
+  top: -10%;
+  width: 58%;
+  height: 72%;
+  border-left: 1px solid #d7d7d2;
+  transform: rotate(10deg);
+}
+
+.map-land,
+.map-road,
+.map-building,
+.map-park,
+.map-marker {
+  position: absolute;
+  z-index: 1;
+}
+
+.map-land {
+  background: #d9edcc;
+}
+
+.land-one {
+  left: 35%;
+  top: 17%;
+  width: 23%;
+  height: 24%;
+  clip-path: polygon(8% 12%, 100% 0, 78% 62%, 56% 100%, 0 72%);
+}
+
+.land-two {
+  left: 57%;
+  top: 42%;
+  width: 18%;
+  height: 38%;
+  clip-path: polygon(0 4%, 52% 0, 100% 78%, 45% 100%, 10% 58%);
+}
+
+.land-three {
+  right: 8%;
+  bottom: 8%;
+  width: 27%;
+  height: 22%;
+  clip-path: polygon(0 0, 100% 34%, 76% 100%, 20% 70%);
+}
+
+.map-road {
+  color: #8d887f;
+  background: #fff;
+  border: 1px solid #d5d3cd;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.road-main {
+  right: -8%;
+  top: 16%;
+  width: 48%;
+  height: 34px;
+  transform: rotate(13deg);
+}
+
+.road-side {
+  left: 57%;
+  top: 16%;
+  width: 32px;
+  height: 34%;
+  writing-mode: vertical-rl;
+  transform: rotate(16deg);
+}
+
+.road-left {
+  left: -8%;
+  top: 29%;
+  width: 24%;
+  height: 18px;
+  border-radius: 999px;
+  transform: rotate(-28deg);
+}
+
+.map-building {
+  color: #8b8b86;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.building-one {
+  right: 2%;
+  top: 54%;
+  max-width: 170px;
+  text-align: center;
+}
+
+.building-two {
+  right: 39%;
+  top: 42%;
+}
+
+.building-three {
+  right: 18%;
+  top: 37%;
+}
+
+.map-park {
+  color: #6ca367;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.park-one {
+  right: 16%;
+  top: 45%;
+}
+
+.park-two {
+  right: 20%;
+  bottom: 18%;
+}
+
+.map-marker {
+  left: 48%;
+  top: 55%;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  transform: translate(-50%, -50%);
+}
+
+.marker-icon {
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border-radius: 50% 50% 50% 0;
+  color: #fff;
+  background: #ef624e;
+  box-shadow: 0 10px 26px rgba(239, 98, 78, 0.32);
+  font-size: 26px;
+  transform: rotate(-45deg);
+}
+
+.marker-symbol {
+  display: block;
+  transform: rotate(45deg);
+}
+
+.map-marker strong {
+  color: #171713;
+  font-size: 15px;
+  font-weight: 900;
 }
 
 .map-fallback {
@@ -663,6 +838,10 @@ h2 {
     padding: 104px 20px 220px;
   }
 
+  .hero h1 {
+    font-size: 52px;
+  }
+
   .hero-shade {
     background:
       linear-gradient(90deg, rgba(10, 16, 13, 0.88), rgba(10, 16, 13, 0.5)),
@@ -717,6 +896,10 @@ h2 {
     height: 38px;
   }
 
+  .hero h1 {
+    font-size: 40px;
+  }
+
   .hero-actions {
     display: grid;
   }
@@ -733,8 +916,8 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .map-embed {
-    height: 340px;
+  .map-preview {
+    min-height: 360px;
   }
 
   .map-actions,
