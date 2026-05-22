@@ -276,6 +276,56 @@ h2 {
   gap: 18px;
 }
 
+.photo-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+  grid-template-rows: repeat(2, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.photo-card {
+  position: relative;
+  min-height: 220px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ddd5c8;
+}
+
+.photo-card.large {
+  grid-row: span 2;
+}
+
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.photo-card figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  gap: 4px;
+  padding: 18px;
+  color: #fff;
+  background: linear-gradient(0deg, rgba(15, 18, 14, 0.78), rgba(15, 18, 14, 0));
+}
+
+.photo-card strong {
+  font-size: 19px;
+}
+
+.photo-card span {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  word-break: keep-all;
+}
+
 .quick-section {
   background: #efe7d8;
 }
@@ -334,6 +384,19 @@ h2 {
   margin: 0;
   color: var(--muted);
   word-break: keep-all;
+}
+
+.source-note {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.source-note a {
+  color: var(--pine);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .value-section {
@@ -695,6 +758,15 @@ h2 {
 
   .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .photo-showcase {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .photo-card.large {
+    grid-row: auto;
   }
 
   .quick-grid {
